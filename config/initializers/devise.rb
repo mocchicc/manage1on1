@@ -3,13 +3,14 @@
 Devise.setup do |config|
 
   require 'devise/orm/active_record'
-  config.omniauth :google_oauth2,
-                  #ENV['GOOGLE_APP_ID'],
-                  #ENV['GOOGLE_APP_SECRET'],
-                  ENV['1067983617700-h5oo2rejb6mjktddv0p0vogia8jovp61.apps.googleusercontent.com'],
-                  ENV['fuVGH9bfDUeKFN8nUmUQsM3v'],
-                  name: :google,
-                  scope: %w(email) 
+  config.omniauth :google_oauth2, '1067983617700-h5oo2rejb6mjktddv0p0vogia8jovp61.apps.googleusercontent.com', 'fuVGH9bfDUeKFN8nUmUQsM3v', {}
+  #config.omniauth :google_oauth2,
+  #                #ENV['GOOGLE_APP_ID'],
+  #                #ENV['GOOGLE_APP_SECRET'],
+  #                ENV[''],
+  #                ENV[''],
+  #                name: :google,
+  #                scope: %w(email) 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
