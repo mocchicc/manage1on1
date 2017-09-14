@@ -1,0 +1,12 @@
+<h1>Users#edit</h1>
+
+<% if current_user.username.nil? %>
+	おい、ユーザーネームを設定しろ！
+
+	<%= form_for(@user, url:users_update_path, method: 'post') do |f| %>
+	  <%= f.text_field :fullname %>
+	  <%= f.text_field :username %>
+	  <%= f.submit "OK" %>
+	<% end %>
+
+<% end %>
