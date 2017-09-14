@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'static/home'
+
+  root to: "static#home"
 
   get 'static/help'
 
