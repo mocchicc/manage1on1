@@ -4,8 +4,15 @@
 	おい、ユーザーネームを設定しろ！
 
 	<%= form_for(@user, url:users_update_path, method: 'post') do |f| %>
-	  <%= f.text_field :fullname %>
-	  <%= f.text_field :username %>
+
+	  <dl>
+	  	<dt>Your Name:</dt>
+	  	<dd><%= f.text_field :fullname %></dd>
+
+	    <dt>Slack Name:</dt>
+	    <dd><%= f.text_field :username %></dd>
+	  </dl>
+
 	  <%= f.submit "OK" %>
 	<% end %>
 

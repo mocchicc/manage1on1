@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @username = params[:username]
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:id])
   end
 
   def crete
