@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914073112) do
+ActiveRecord::Schema.define(version: 20170926091039) do
+
+  create_table "one_on_ones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "owner_id"
+    t.bigint "guest_id"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_one_on_ones_on_guest_id"
+    t.index ["owner_id"], name: "index_one_on_ones_on_owner_id"
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
